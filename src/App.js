@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header.js';
+import CreateTask from './components/CreateTask.js';
 
 function App() {
   return (
-    <div className="App">
-        
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="App" >
+        <Header />
+      <header>
+      <div>
+        <h1 class="font-hairline text-5xl text-center py-3 text-gray-200">TODO G-O</h1>
+      </div>
+      <CreateTask />
         <p >
           Edit <code>src/App.js</code> and save to reload.
         </p>
