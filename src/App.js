@@ -9,31 +9,19 @@ class App extends React.Component {
     super(props);
     this.state={value:''};
     this.task={
-      text : [1,2,'carr','casa'],
-      edit : false,
-      done : false,
+      text : [],
+      edit : [],
+      done : [],
     };
-    this.handleChange=this.handleChange.bind(this);
+    this.taskChange=this.taskChange.bind(this);
     this.handleClick=this.handleClick.bind(this);
   }
-  handleClick(e){
-    e.preventDefault();
-    this.setState({value: e.target.value});
-    let { data }= this.task;
-    let {newdata} = [
-      ...data,
-      {
-        text: 'agrega',
-        edit: false,
-        done: false
-
-      }
-    ];
-    this.setState({data:newdata});
+  handleClick(){
+   
   }
 
-  handleChange(e){
-    this.setState({value: e.target.value});
+  taskChange(task){
+    this.setState({value: task});
   }
   _add(){
     let { data }= this.task;
@@ -57,8 +45,8 @@ class App extends React.Component {
       <div>
         <h1 class="font-hairline text-3xl lg:text-5xl xl:text-5xl text-center py-3 text-gray-800">TODO G-O</h1>
       </div>
-      <CreateTask text={this.state.value} handleClick={this.handleClick} handleChange={this.handleChange} />
-      <TaskList task={this.task}/>
+      <CreateTask handleClick={this.handleClick} taskChange={this.taskChange} />
+      <TaskList task={this.task} text={this.state.value}/>
       {this.state.value}, . {this.task.text}
     </div>
   );}

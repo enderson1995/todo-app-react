@@ -18,9 +18,9 @@ class TaskList extends React.Component {
             <div class="block bg-gray-700 px-2 pb-4 border-solid border-4 text-rigth border-solid p-1 mx-auto mt-2 w-full max-w-lg
                         lg:flex-auto lg:py-32 lg:px-4 lg:pb-2 lg:pt-4">
                 <p class="text-left px-4 text-white">Task list :</p>
-                <div class="block bg-gray-200 py-12 lg:py-32 ">
+                <div class="block overflow-auto bg-gray-200 py-12 lg:py-32 ">
                     lista de tareas
-                    {this.props.task.text}}
+                    {this.props.text}
                     <List task={this.props.task}/>
                 </div>
             </div>
