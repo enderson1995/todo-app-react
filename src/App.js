@@ -8,6 +8,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state={value:''};
+    this.var= '';
     this.task={
       text : [],
       edit : [],
@@ -17,25 +18,15 @@ class App extends React.Component {
     this.handleClick=this.handleClick.bind(this);
   }
   handleClick(){
-   
+    this.var=this.state.value;
+    this.task.text.push(this.state.value);
+    this.task.edit.push(false);
+    this.task.done.push(false);
+    this.var=true;
   }
 
   taskChange(task){
     this.setState({value: task});
-  }
-  _add(){
-    let { data }= this.task;
-    let newdata = [
-      ...data,
-      {
-        text: 'agrega',
-        edit: false,
-        done: false
-
-      }
-    ];
-    this.setState({data:newdata});
-
   }
 
   render(){
